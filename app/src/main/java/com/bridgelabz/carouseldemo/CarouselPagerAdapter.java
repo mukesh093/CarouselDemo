@@ -13,14 +13,14 @@ public class CarouselPagerAdapter extends FragmentPagerAdapter implements ViewPa
     public final static float BIG_SCALE = 0.7f;
     public final static float SMALL_SCALE = 0.5f;
     public final static float DIFF_SCALE = BIG_SCALE - SMALL_SCALE;
-    private MainActivity context;
-    private FragmentManager fragmentManager;
+    private MainActivity mContext;
+    private FragmentManager mFragmentManager;
     private float scale;
 
     public CarouselPagerAdapter(MainActivity context, FragmentManager fm) {
         super(fm);
-        this.fragmentManager = fm;
-        this.context = context;
+        this.mFragmentManager = fm;
+        this.mContext = context;
     }
 
     @Override
@@ -37,7 +37,7 @@ public class CarouselPagerAdapter extends FragmentPagerAdapter implements ViewPa
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return ItemFragment.newInstance(context, position, scale);
+        return ItemFragment.newInstance(mContext, position, scale);
     }
 
     @Override
@@ -76,11 +76,11 @@ public class CarouselPagerAdapter extends FragmentPagerAdapter implements ViewPa
 
     @SuppressWarnings("ConstantConditions")
     private CarouselLinearLayout getRootView(int position) {
-        return (CarouselLinearLayout) fragmentManager.findFragmentByTag(this.getFragmentTag(position))
+        return (CarouselLinearLayout) mFragmentManager.findFragmentByTag(this.getFragmentTag(position))
                 .getView().findViewById(R.id.root_container);
     }
 
     private String getFragmentTag(int position) {
-        return "android:switcher:" + context.pager.getId() + ":" + position;
+        return "android:switcher:" + mContext.pager.getId() + ":" + position;
     }
 }

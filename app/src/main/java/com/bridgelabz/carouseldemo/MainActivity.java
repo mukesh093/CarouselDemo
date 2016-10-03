@@ -10,6 +10,7 @@ public class MainActivity extends AppCompatActivity {
     public CarouselPagerAdapter adapter;
     public ViewPager pager;
     public static int count = 10; //ViewPager items size
+
     /**
      * You shouldn't define first page = 0.
      * Let define firstpage = 'number viewpager size' to make endless carousel
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        pager = (ViewPager) findViewById(R.id.myviewpager);
+        pager = (ViewPager) findViewById(R.id.viewPager);
 
         //set page margin between pages for viewpager
         DisplayMetrics metrics = new DisplayMetrics();

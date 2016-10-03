@@ -11,9 +11,9 @@ import android.widget.ImageView;
 
 public class ImageDetailsActivity extends AppCompatActivity {
 
+    private static final String DRAWABLE_RESOURCE = "resource";
     private ImageView imageView;
     private Button button;
-    private static final String DRAWABLE_RESOURCE = "resource";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
